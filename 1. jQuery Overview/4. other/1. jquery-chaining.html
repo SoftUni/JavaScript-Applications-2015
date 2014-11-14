@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Chaining</title>	  	
+	<style type="text/css">
+	.btn-success{
+		padding: 5px 15px;
+		border: 3px solid #7f7;
+		border-radius: 5px;
+		background: #afa;
+	}
+	.btn-success:hover{
+		background: #7f7;		
+	}
+	</style>
+</head>
+<body>
+	<br/>
+	<strong>Successes:</strong>
+	<ul id='success-list'></ul>
+	<script type="text/javascript" src="..//jquery.min.js"></script>
+	<script>
+
+	function onSuccessButtonClick(ev) {
+		$('#success-list').append(
+			$('<li />')
+			.addClass('success-item')
+			.html('success')
+		);
+	}
+
+	$('<button />')
+		.addClass('btn-success')
+		.html('Click for success!')
+		.on('click', onSuccessButtonClick)
+		.prependTo(document.body);
+	</script>
+
+</body>
+</html>

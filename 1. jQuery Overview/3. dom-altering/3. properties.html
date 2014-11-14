@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="..//jquery.min.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="inner-wrapper">
+      <ul id="items-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li class="special">Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="result"></div>
+  <script type="text/javascript">
+    $("#result").html("<script>alert('asd')<\/script>");
+    $("#result").text("<script>alert('asd')<\/script>");
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="..//jquery.min.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="inner-wrapper">
+      <ul id="items-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li class="special">Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+      </ul>
+    </div>
+  </div>
+ <div>
+    <strong>Messages: </strong>
+    <ul id="messages-list"></ul>
+  </div>
+
+  <script type="text/javascript">
+    function printMessage(text){
+      $("#messages-list").append('<li>Message: ' + text + '</li>');
+    }
+
+    var $specialItem = $(".special").first();	
+    printMessage("id: " + $specialItem.parent().attr("id"));
+    printMessage("id: " + $specialItem.parents("div").attr("id"));
+    printMessage("id: " + $specialItem.parents("#wrapper").attr("id"));
+  </script>
+</body>
+</html>

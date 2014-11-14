@@ -1,0 +1,62 @@
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+  #items-list{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+  }
+    #items-list li{
+      display:inline-block;
+      width:60px;
+      height:60px;
+      margin:0;
+      margin-right:15px;
+      margin-bottom:15px;      
+      padding:0;
+      border:1px solid black;
+      border-radius: 5px;
+      text-align: center
+    }
+    #items-list li:nth-child(2n-1){
+      background: #ccc
+    }
+
+    .button{
+      display:inline-block;
+      margin:5px;
+      padding:5px 15px;
+      background-color:#ccc;
+      border:1px solid black;
+      border-radius: 5px;
+      color:black;
+      text-decoration: none
+    }
+
+    .button:hover{
+      text-decoration: underline;
+    }
+  </style>
+  <script type="text/javascript" src="..//jquery.min.js"></script>
+</head>
+<body>
+ <a href="#" class="button">Delete at event positions</a>
+ <ul id="items-list">
+ </ul>
+  <script type="text/javascript">
+    var i,
+      count = 50,
+      $list;
+    $list = $('#items-list');
+    for (i = 0; i < count; i += 1) {
+      $list.append('<li>Item #' + i + '</li>');
+    }
+
+    $('.button').on('click', function () {
+      $list.find('li:even').remove();
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="..//jquery.min.js"></script>
+</head>
+<body>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li class="special">Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+  </ul>
+  <div>
+    <strong>Messages: </strong>
+    <ul id="messages-list"></ul>
+  </div>
+  <script type="text/javascript">
+    function printMessage(text){
+      $("#messages-list").append('<li>Message: ' + text + '</li>');
+    }
+
+    var $specialItem = $(".special");    
+    printMessage($specialItem.text());    
+    printMessage($specialItem.next().text());
+    printMessage($specialItem.prev().text());
+
+    //undefined, $specialItem is not a DOM element and has no method nextSibling
+    printMessage($specialItem.nextSibling);
+
+  </script>
+</body>
+</html>

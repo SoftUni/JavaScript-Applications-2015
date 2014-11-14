@@ -1,0 +1,76 @@
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="..//jquery.min.js"></script>
+  <style type="text/css">  
+  ul.buttons-group{
+    list-style-type: none;
+  }
+  ul.buttons-group li{
+    display:inline-block;
+  }
+    .button{
+      display:block;
+      padding:5px 15px;
+      font-weight: normal;
+      text-decoration: none;
+      color:black;
+      border:1px solid #444;
+      border-radius: 5px;
+    }
+    .button:hover{
+      background-color:#ccc;
+    }
+    .current{
+      font-weight: bold;
+
+    }
+  </style>
+</head>
+<body>
+  <ul class='buttons-group'>
+    <li><a href="#" class="button current">Button 1</a></li>
+    <li><a href="#" class="button">Button 2</a></li>
+    <li><a href="#" class="button">Button 3</a></li>
+    <li><a href="#" class="button">Button 4</a></li>
+    <li><a href="#" class="button">Button 5</a></li>
+    <li><a href="#" class="button">Button 6</a></li>
+    <li><a href="#" class="button">Button 7</a></li>
+  </ul>
+  <input type="text" id="tb-text" />
+  <div>
+    <strong>Messages</strong>
+    <ul id="messages-list">
+    </ul>
+  </div>
+  <script type="text/javascript">
+  function printMessage(text){
+    $('#messages-list').append('<li>Message: <strong>' + text + '</strong></li>');
+  }
+
+  function onButtonClick() {
+    $('.current').removeClass('current');
+    $(this).addClass('current');
+  }
+
+  function onOptimizedButtonClick() {
+    var message;
+    message = $(this).text() + ' clicked';
+    printMessage(message);
+  }
+
+  function onInputChange() {
+    var message;
+    message = 'Input value changed to ' + $(this).val();
+    printMessage(message);
+  }
+
+  $(document).ready(function () {
+    $('.button').on('click', onButtonClick);
+    $('#tb-text').on('change', onInputChange);
+
+    $('ul').on('click', 'li', onOptimizedButtonClick);
+  });
+  </script>
+</body>
+</html>

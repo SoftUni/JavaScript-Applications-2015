@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery AJAX</title>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<div id="root">
+		<p>Type to filter the countries</p>
+		<label for="tb-filter">Filter: </label>
+		<input type="text" id="tb-filter">
+		<div id="countries">
+		</div>
+	</div>
+	<script type="text/javascript" src="..//jquery.min.js"></script>
+	<script>
+	function createCountriesList(countries) {
+		var $countriesList = $('<ul class="countries-list" />');
+		$(countries).each(function (index, country) {
+			$countriesList.append(
+				$('<li />')
+				.addClass('country-item')
+				.html(country.name)
+			);
+		});
+		return $countriesList;
+	}
+
+	$(function () {
+		//attach on 'keyup' for live update 
+		//('change' fires when the focus is lost)
+		$("#tb-filter").on('keyup', function () {
+			var value,
+				$countries;
+			value = $(this).val().toLowerCase();
+			$countries = $('.country-item');
+			if (value === '') {
+				$countries.show();
+			} else {
+				$countries
+					.hide()
+					.filter(function (_, country) {
+						return $(country).html().toLowerCase().indexOf(value.toLowerCase()) !== -1;
+					})
+					.show();
+			}
+		});
+
+		$.get('http://restcountries.eu/rest/v1')
+			.success(function (respCountries) {
+				var $countriesList = createCountriesList(respCountries);
+				$('#countries').html($countriesList);
+			});
+	});
+	</script>	
+</body>
+</html>
