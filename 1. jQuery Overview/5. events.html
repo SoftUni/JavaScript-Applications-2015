@@ -1,6 +1,9 @@
+<!DOCTYPE html>
+
 <html>
+
 <head>
-  <title></title>
+  <title>jQuery: Handling Events</title>
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <style type="text/css">  
   ul.buttons-group{
@@ -27,6 +30,7 @@
     }
   </style>
 </head>
+
 <body>
   <ul class='buttons-group'>
     <li><a href="#" class="button current">Button 1</a></li>
@@ -43,9 +47,13 @@
     <ul id="messages-list">
     </ul>
   </div>
+  
   <script type="text/javascript">
   function printMessage(text){
-    $('#messages-list').append('<li>Message: <strong>' + text + '</strong></li>');
+    $('#messages-list')
+		.append('<li>Message: <strong>')
+		.append(document.createTextNode(text)) // HTML escape the text
+		.append('</strong></li>');
   }
 
   function onButtonClick() {
@@ -54,14 +62,12 @@
   }
 
   function onOptimizedButtonClick() {
-    var message;
-    message = $(this).text() + ' clicked';
+    var message = $(this).text() + ' clicked';
     printMessage(message);
   }
 
   function onInputChange() {
-    var message;
-    message = 'Input value changed to ' + $(this).val();
+    var message = 'Input value changed to ' + $(this).val();
     printMessage(message);
   }
 

@@ -1,8 +1,12 @@
+<!DOCTYPE html>
+
 <html>
+
 <head>
-  <title></title>
+  <title>jQuery: Add Elements</title>
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
+
 <body>
   <div id="wrapper"></div>
   <script type="text/javascript">
@@ -12,14 +16,15 @@
 		count = 10;
 
 	$wrapper = $("#wrapper");
-	$wrapper.append("<h1>Header</h1>");
 	
 	$list = $('<ul/>');
 	for (var i = 0; i < count; i += 1) {
 		$('<li>' + i + '</li>').appendTo($list);
 	}
 
-	$wrapper.prepend($list);
+	$wrapper.append($list);
+	
+	$wrapper.prepend("<h1>Numbers</h1>");
   </script>
 </body>
 </html>

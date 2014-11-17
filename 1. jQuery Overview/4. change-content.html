@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>jQuery: .text() and .html()</title>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+
+<body>
+  <div id="htmlResult">I am HTML result</div>
+  <div id="textResult">I am text result</div>
+  
+  <script type="text/javascript">
+    $("#htmlResult").html("<script>alert('I am HTML')<\/script>");
+    $("#textResult").text("<script>alert('I am text')<\/script>");
+  </script>
+</body>
+
+</html>

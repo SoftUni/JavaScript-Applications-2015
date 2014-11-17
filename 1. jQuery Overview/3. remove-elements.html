@@ -1,6 +1,9 @@
+<!DOCTYPE html>
+
 <html>
+
 <head>
-  <title></title>
+  <title>jQuery: Remove Elements</title>
   <style type="text/css">
   #items-list{
     list-style-type: none;
@@ -40,11 +43,13 @@
   </style>
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
+
 <body>
   <input id="text-input" type="text" />
- <a href="#" class="button">Delete at event positions</a>
- <ul id="items-list">
- </ul>
+  <a href="#" class="button">Delete at DIVs at given position</a>
+  <ul id="items-list">
+  </ul>
+  
   <script type="text/javascript">
     var i,
       count = 50,
@@ -58,7 +63,6 @@
       var index = $('#text-input').val();
       $list.find('li:eq(' + index + ')').remove();
     });
-
   </script>
 </body>
 </html>

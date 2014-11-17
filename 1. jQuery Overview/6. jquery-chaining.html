@@ -1,8 +1,10 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+
+<html>
+
 <head>
 	<meta charset="UTF-8">
-	<title>jQuery Chaining</title>	  	
+	<title>jQuery: Chaining Function Calls</title>	  	
 	<style type="text/css">
 	.btn-success{
 		padding: 5px 15px;
@@ -15,27 +17,28 @@
 	}
 	</style>
 </head>
+
 <body>
-	<br/>
-	<strong>Successes:</strong>
+	<strong>Success Log:</strong>
 	<ul id='success-list'></ul>
-  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script>
+		function onSuccessButtonClick(ev) {
+			$('#success-list').append(
+				$('<li />')
+				.addClass('success-item')
+				.html('Success!')
+			);
+		}
 
-	function onSuccessButtonClick(ev) {
-		$('#success-list').append(
-			$('<li />')
-			.addClass('success-item')
-			.html('success')
-		);
-	}
-
-	$('<button />')
-		.addClass('btn-success')
-		.html('Click for success!')
-		.on('click', onSuccessButtonClick)
-		.prependTo(document.body);
+		$('<button />')
+			.addClass('btn-success')
+			.html('Click for success!')
+			.on('click', onSuccessButtonClick)
+			.prependTo(document.body)
+			.after('<br/>')
+			.after('<br/>');
 	</script>
-
 </body>
+
 </html>
