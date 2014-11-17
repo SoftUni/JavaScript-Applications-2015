@@ -1,41 +1,65 @@
 <html>
 <head>
   <title></title>
-  <script type="text/javascript" src="..//jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 <body>  
   <header>
-    <h1>The Header</h1>
+    <h1>Selectors demo</h1>
   </header>
-  <section>
-    <div id="content">
-      <strong>Messages: </strong>
-      <ul id="message-list">
-      </ul>
-    </div>
-  </section>
-  <aside class="widget">
-    <h2>Widget 1</h2>
+  <section class="widget">
+    <h2>Cars</h2>
     <ul>
       <li>
-        <a href="#">Item 1</a>
+        <a href="#" id="first" data-class="fast">BMW</a>
       </li>
       <li>
-        <a href="#">Item 1</a>
+        <a href="#" class="selected-item" data-class="family">Audi</a>
       </li>
       <li>
-        <a href="#">Item 1</a>
+        <a href="#" data-class="family">Mercedes-Benz</a>
+      </li>
+      <li>
+        <a href="#" data-class="sport">Porsche</a>
+      </li>
+      <li>
+        <a href="#" data-class="luxury">Aston Martin</a>
+      </li>
+      <li>
+        <a href="#" data-class="fast">Trabant</a>
       </li>
     </ul>
-  </aside>
+  </section>
   <script type="text/javascript">
-    function printContent(text){
-      $("#message-list").append("<li>Message: <strong>" + text + "</strong></li>");
+    function logItems($items){
+      for (var i = 0; i < $items.length; i++) {
+        console.log('-' + $items[i].innerHTML);
+      };
     }
 
-    var $items = $("ul li");
-    printContent($items.length);
-    printContent($(".widget").text());
+    var $tagItems = $("ul li a");
+    console.log('Elements with selector: "ul li a":');
+    logItems($tagItems);
+
+    var $classItems = $('.selected-item a');
+    console.log('Elements with selector: ".selected-item":');
+    logItems($classItems);
+    
+    var $idItems = $('#first a, .selected-item a');
+    console.log('Elements with selector: "#first, .selected-item":');
+    logItems($idItems);
+
+    var $oddItems = $('li:even a');
+    console.log('Elements with selector: "li:even":');
+    logItems($oddItems);
+
+    var $itemsContainedY = $('a[data-class*="y"]');
+    console.log('Elements with selector: "a[data-class*="y"]":');
+    logItems($itemsContainedY);
+
+    var $itemsStartedWithFa = $('a[data-class^="fa"]');
+    console.log('Elements with selector: "a[data-class^="fa"]":');
+    logItems($itemsStartedWithFa);
   </script>
 </body>
 </html>
