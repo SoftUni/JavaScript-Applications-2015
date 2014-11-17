@@ -38,9 +38,10 @@
       text-decoration: underline;
     }
   </style>
-  <script type="text/javascript" src="..//jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 <body>
+  <input id="text-input" type="text" />
  <a href="#" class="button">Delete at event positions</a>
  <ul id="items-list">
  </ul>
@@ -54,7 +55,8 @@
     }
 
     $('.button').on('click', function () {
-      $list.find('li:even').remove();
+      var index = $('#text-input').val();
+      $list.find('li:eq(' + index + ')').remove();
     });
 
   </script>

@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title></title>
+  <title>Parent demo</title>
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 <body>
@@ -21,9 +21,12 @@
   </div>
 
   <script type="text/javascript">
-    var itemsList = $('#items-list');
-    console.log(itemsList.children());
-    console.log(itemsList.children('li:not(".special")'));
+
+    var $specialItem = $(".special").first();	
+    console.log("Special item's parent: " + $specialItem.parent().attr("id"));
+    console.log("Special item's parents: " );
+    console.dir($specialItem.parents("div"));
+    console.log("parents with selector '#wrapper': " + $specialItem.parents("#wrapper").attr("id"));
   </script>
 </body>
 </html>
