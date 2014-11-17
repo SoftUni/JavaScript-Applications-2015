@@ -1,8 +1,12 @@
+<!DOCTYPE html>
+
 <html>
+
 <head>
-  <title>Parent demo</title>
+  <title>jQuery: parent() Demo</title>
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
+
 <body>
   <div id="wrapper">
     <div id="inner-wrapper">
@@ -15,18 +19,13 @@
       </ul>
     </div>
   </div>
- <div>
-    <strong>Messages: </strong>
-    <ul id="messages-list"></ul>
-  </div>
 
   <script type="text/javascript">
-
-    var $specialItem = $(".special").first();	
-    console.log("Special item's parent: " + $specialItem.parent().attr("id"));
+    var specialItem = $(".special").first();	
+    console.log("Special item's parent: " + specialItem.parent().attr("id"));
     console.log("Special item's parents: " );
-    console.dir($specialItem.parents("div"));
-    console.log("parents with selector '#wrapper': " + $specialItem.parents("#wrapper").attr("id"));
+    console.dir(specialItem.parents("div"));
+    console.log("parents with selector '#wrapper': " + specialItem.parents("#wrapper").attr("id"));
   </script>
 </body>
 </html>

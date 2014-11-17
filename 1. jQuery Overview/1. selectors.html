@@ -1,12 +1,13 @@
+<!DOCTYPE html>
+
 <html>
+
 <head>
-  <title>Selectors demo</title>
+  <title>jQuery: Selectors Demo</title>
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
+
 <body>  
-  <header>
-    <h1>Selectors demo</h1>
-  </header>
   <section class="widget">
     <h2>Cars</h2>
     <ul>
@@ -30,11 +31,12 @@
       </li>
     </ul>
   </section>
+  
   <script type="text/javascript">
     function logItems($items){
       for (var i = 0; i < $items.length; i++) {
         console.log('-' + $items[i].innerHTML);
-      };
+      }
     }
 
     var $tagItems = $("ul li a");

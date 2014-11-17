@@ -1,12 +1,13 @@
+<!DOCTYPE html>
+
 <html>
+
 <head>
-  <title>next() and prev() demo</title>
+  <title>jQuery: next() and prev() Demo</title>
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
+
 <body>  
-  <header>
-    <h1>next() and prev() demo</h1>
-  </header>
   <section class="widget">
     <h2>Cars</h2>
     <ul>
@@ -18,15 +19,15 @@
       <li data-class="fast" class="last">Trabant</li>
     </ul>
   </section>
+  
   <script type="text/javascript">
-    var $specialItem = $(".special");    
-    console.log('Special item text: ' + $specialItem.text());    
-    console.log('Special item.next() text: ' + $specialItem.next().text());
-    console.log('Special item.prev() text:' + $specialItem.prev().text());
+    var specialItem = $(".special");    
+    console.log("Special item's text: " + specialItem.text());    
+    console.log("Special item.next()'s text: " + specialItem.next().text());
+    console.log("Special item.prev()'s text: " + specialItem.prev().text());
 
-    //undefined, $specialItem is not a DOM element and has no method nextSibling
-    console.log($specialItem.nextSibling);
-
+    // undefined, specialItem is not a DOM element and has no function nextSibling
+    console.log(specialItem.nextSibling);
   </script>
 </body>
 </html>
