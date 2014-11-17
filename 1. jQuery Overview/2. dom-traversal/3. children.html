@@ -21,12 +21,9 @@
   </div>
 
   <script type="text/javascript">
-
-    var $specialItem = $(".special").first();	
-    console.log("Special item's parent: " + $specialItem.parent().attr("id"));
-    console.log("Special item's parents: " );
-    console.dir($specialItem.parents("div"));
-    console.log("parents with selector '#wrapper': " + $specialItem.parents("#wrapper").attr("id"));
+    var itemsList = $('#items-list');
+    console.log(itemsList.children());
+    console.log(itemsList.children('li:not(".special")'));
   </script>
 </body>
 </html>

@@ -1,32 +1,31 @@
 <html>
 <head>
-  <title></title>
-  <script type="text/javascript" src="..//jquery.min.js"></script>
+  <title>next() and prev() demo</title>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
-<body>
-  <ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li class="special">Item 3</li>
-    <li>Item 4</li>
-    <li>Item 5</li>
-  </ul>
-  <div>
-    <strong>Messages: </strong>
-    <ul id="messages-list"></ul>
-  </div>
+<body>  
+  <header>
+    <h1>next() and prev() demo</h1>
+  </header>
+  <section class="widget">
+    <h2>Cars</h2>
+    <ul>
+      <li id="first" data-class="fast">BMW</li>
+      <li class="selected-item" data-class="family">Audi</li>
+      <li data-class="family">Mercedes-Benz</li>
+      <li class="special" data-class="sport">Porsche</li>
+      <li data-class="luxury">Aston Martin</li>
+      <li data-class="fast" class="last">Trabant</li>
+    </ul>
+  </section>
   <script type="text/javascript">
-    function printMessage(text){
-      $("#messages-list").append('<li>Message: ' + text + '</li>');
-    }
-
     var $specialItem = $(".special");    
-    printMessage($specialItem.text());    
-    printMessage($specialItem.next().text());
-    printMessage($specialItem.prev().text());
+    console.log('Special item text: ' + $specialItem.text());    
+    console.log('Special item.next() text: ' + $specialItem.next().text());
+    console.log('Special item.prev() text:' + $specialItem.prev().text());
 
     //undefined, $specialItem is not a DOM element and has no method nextSibling
-    printMessage($specialItem.nextSibling);
+    console.log($specialItem.nextSibling);
 
   </script>
 </body>
