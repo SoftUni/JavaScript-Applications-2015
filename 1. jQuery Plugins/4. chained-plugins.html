@@ -1,35 +1,35 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title></title>
-  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="scripts/zoom.js"></script>
-  <style type="text/css">
-    .zoom{
-      width:150;
-      height:150;
-      background-color:#cccccc;
-      border:1px solid red;
-      display:inline-block;
-    }
-  </style>
+	<title>How to make chained plugins?</title>
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="scripts/zoom.js"></script>
+	<style type="text/css">
+		.zoom{
+			width: 150px;
+			height: 150px;
+			background-color: #cccccc;
+			border: 1px solid red;
+			display: inline-block;
+		}
+	</style>
 </head>
 <body>
-  <div class="zoom">Text</div>
-  <div class="zoom">Text</div>
-  <div class="zoom">Text</div>
-  <div class="zoom">Text</div>
-  <div class="zoom">Text</div>
+	<div class="zoom">Text</div>
+	<div class="zoom">Text</div>
+	<div class="zoom">Text</div>
+	<div class="zoom">Text</div>
+	<div class="zoom">Text</div>
 
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $(".zoom")
-        .zoom()
-        .on("click", function() {
-          alert("Clicked!")
-        })
-        .css("margin","20px");
-      });
-  </script>
-
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".zoom")
+				.zoom()
+				.on("click", function() {
+					alert("Clicked!")
+				})
+				.css("margin","20px");
+		});
+	</script>
 </body>
 </html>

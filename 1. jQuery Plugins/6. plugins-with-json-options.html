@@ -1,34 +1,34 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title></title>
-  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="scripts/zoom-json-options.js"></script>
-  <style type="text/css">
-    .zoom{
-      display:inline-block;
-      width:150;
-      height:150;
-      background-color:#cccccc;
-      border:1px solid #000;
-      border-radius: 5px
-    }
-  </style>
+	<title>Plugins with json options as parameters</title>
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="scripts/zoom-json-options.js"></script>
+	<style type="text/css">
+		.zoom{
+			display:inline-block;
+			width:150;
+			height:150;
+			background-color:#cccccc;
+			border:1px solid #000;
+			border-radius: 5px
+		}
+	</style>
 </head>
 <body>
-  <div class="zoom">Text</div>
-  <div class="zoom">Text</div>
-  <div class="zoom">Text</div>
-  <div class="zoom">Text</div>
-  <div class="zoom">Text</div>
+	<div class="zoom">Text</div>
+	<div class="zoom">Text</div>
+	<div class="zoom">Text</div>
+	<div class="zoom">Text</div>
+	<div class="zoom">Text</div>
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $('.zoom')
-        .zoom({
-          size: 1.5
-        });
-    });
-  </script>
-
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.zoom')
+				.zoom({
+					size: 1.5
+				});
+		});
+	</script>
 </body>
 </html>
