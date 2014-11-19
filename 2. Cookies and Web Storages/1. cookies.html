@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Set get cookie test</title>
+</head>
+<body>
+	<script src="scripts/cookies.js"></script>
+	<script>
+		cookie.set("website", "audero.it", new Date(new Date().getTime() + 10000));
+		cookie.set("author", "aurelio", 30);
+
+		console.log('Cookie "website" -> ' + cookie.get('website'));
+		console.log('Cookie "author" -> ' + cookie.get('author'));
+		console.log('Delete cookie author');
+		cookie.delete('author');
+		console.log('Cookie "author" -> ' + cookie.get('author'));
+	</script>
+</body>
+</html>
