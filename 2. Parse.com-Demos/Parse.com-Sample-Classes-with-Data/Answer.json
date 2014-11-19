@@ -1,0 +1,98 @@
+{ "results": [
+	{
+        "answerText": "PHP",
+        "createdAt": "2014-11-19T12:53:46.461Z",
+        "objectId": "POufNG26jv",
+        "question": {
+            "__type": "Pointer",
+            "className": "Question",
+            "objectId": "4uKvW0uAdt"
+        },
+        "updatedAt": "2014-11-19T12:53:48.779Z",
+        "votes": 3
+    },
+	{
+        "answerText": "Java",
+        "createdAt": "2014-11-19T12:53:52.423Z",
+        "objectId": "Mz2VGD7Qr9",
+        "question": {
+            "__type": "Pointer",
+            "className": "Question",
+            "objectId": "4uKvW0uAdt"
+        },
+        "updatedAt": "2014-11-19T12:53:54.658Z",
+        "votes": 4
+    },
+	{
+        "answerText": "JavaScript",
+        "createdAt": "2014-11-19T12:53:59.452Z",
+        "objectId": "Jsz7LAwEXE",
+        "question": {
+            "__type": "Pointer",
+            "className": "Question",
+            "objectId": "4uKvW0uAdt"
+        },
+        "updatedAt": "2014-11-19T13:01:58.532Z",
+        "votes": 7
+    },
+	{
+        "answerText": "C#",
+        "createdAt": "2014-11-19T12:55:30.962Z",
+        "objectId": "nlXPj82cBb",
+        "question": {
+            "__type": "Pointer",
+            "className": "Question",
+            "objectId": "4uKvW0uAdt"
+        },
+        "updatedAt": "2014-11-19T12:56:02.453Z",
+        "votes": 12
+    },
+	{
+        "answerText": "Red",
+        "createdAt": "2014-11-19T12:55:46.699Z",
+        "objectId": "z0yRxZEh5B",
+        "question": {
+            "__type": "Pointer",
+            "className": "Question",
+            "objectId": "MIxsWYvkvY"
+        },
+        "updatedAt": "2014-11-19T12:55:48.880Z",
+        "votes": 0
+    },
+	{
+        "answerText": "Blue",
+        "createdAt": "2014-11-19T12:56:09.891Z",
+        "objectId": "R8Eqg45G9t",
+        "question": {
+            "__type": "Pointer",
+            "className": "Question",
+            "objectId": "MIxsWYvkvY"
+        },
+        "updatedAt": "2014-11-19T12:56:14.214Z",
+        "votes": 8
+    },
+	{
+        "answerText": "White",
+        "createdAt": "2014-11-19T12:56:24.016Z",
+        "objectId": "jWhzI2PUER",
+        "question": {
+            "__type": "Pointer",
+            "className": "Question",
+            "objectId": "MIxsWYvkvY"
+        },
+        "updatedAt": "2014-11-19T12:56:26.675Z",
+        "votes": 2
+    },
+	{
+        "answerText": "Green",
+        "createdAt": "2014-11-19T12:55:52.531Z",
+        "objectId": "tZ0KGRNRJQ",
+        "question": {
+            "__type": "Pointer",
+            "className": "Question",
+            "objectId": "MIxsWYvkvY"
+        },
+        "updatedAt": "2014-11-19T13:09:15.485Z",
+        "votes": 8
+    }
+] }
