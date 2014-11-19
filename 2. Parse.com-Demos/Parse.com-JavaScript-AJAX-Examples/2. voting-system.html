@@ -75,7 +75,7 @@
 				var answer = data.results[a];
 				var answerItem = $('<li>');
 				answerItem.text(answer.answerText + 
-					'(' + answer.votes + ') ');
+					' (' + answer.votes + ') ');
 				var button = $("<a href='#'>[Vote]</а>");
 				button.data('answer', answer);
 				button.click(voteButtonClicked);
