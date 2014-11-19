@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Local Storage Demo</title>
+</head>
+<body>
+	<div>
+		<input id="key" type="text" placeholder="Insert key" />
+		<input id="value" type="text" placeholder="Insert value" />
+		<button id="put-btn">Put in local storage</button>
+		<button id="get-btn">get from local storage</button>
+	</div>
+	<div id="result">
+		Items: <br/>
+	</div>
+	<script>
+		(function () {
+			var result = document.getElementById('result');
+			var button = document.getElementById('put-btn');
+			button.addEventListener('click', function (e) {
+				var keyText = document.getElementById('key').value;
+				var valueText = document.getElementById('value').value;
+				
+				localStorage.setItem(keyText, valueText);
+				result.innerHTML += 'Item added: ' + keyText + ' => ' + valueText + '<br />';
+			});
+
+			var getButton = document.getElementById('get-btn');
+			getButton.addEventListener('click', function (e) {
+				var keyText = document.getElementById('key').value;
+				
+				result.innerHTML += keyText + ' => ' + localStorage.getItem(keyText) + '<br />';
+			});
+		}())
+	</script>
+</body>
+</html>
