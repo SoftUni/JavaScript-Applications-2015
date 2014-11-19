@@ -31,7 +31,6 @@
 				var question = data.results[q];
 				var questionItem = $('<li>');
 				questionItem.text(question.questionText);
-				$(questionItem).click(questionClicked)
 				questionItem.appendTo($("#questions"));
 			}
 		}).error(function() {
