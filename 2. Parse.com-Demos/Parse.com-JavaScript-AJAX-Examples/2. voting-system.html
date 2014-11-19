@@ -9,16 +9,16 @@
 </head>
 
 <body>  
-  <section class="widget">
-    <h2>Questions</h2>
-    <ul id="questions">
-    </ul>
+
+	<h2>Questions</h2>
+	<ul id="questions">
+	</ul>
+	
 	<div id="answers" style="display:none">
 		<h2>answers</h2>
 		<ul>
 		</ul>
-    </div>
-  </section>
+	</div>
   
   <script type="text/javascript">
     $(function() {
@@ -28,13 +28,13 @@
 		loadQuestions();
 
 		function loadQuestions() {
-			$.ajax({
+			jQuery.ajax({
 				method: "GET",
 				headers: {
 					"X-Parse-Application-Id": PARSE_APP_ID,
 					"X-Parse-REST-API-Key": PARSE_REST_API_KEY 
 				},
-				url: "https://api.parse.com/1/classes/Question",
+				url: "https://api.parse.com/1/classes/Question?order=-questionText",
 				success: questionsLoaded,
 				error: ajaxError
 			});
@@ -74,10 +74,43 @@
 			for (var a in data.results) {
 				var answer = data.results[a];
 				var answerItem = $('<li>');
-				answerItem.text(answer.answerText);
+				answerItem.text(answer.answerText + 
+					'(' + answer.votes + ') ');
+				var button = $("<a href='#'>[Vote]</а>");
+				button.data('answer', answer);
+				button.click(voteButtonClicked);
+				button.appendTo(answerItem);
 				answerItem.appendTo($("#answers ul"));
 			}
 			$('#answers').show();
+		}
+		
+		function voteButtonClicked() {
+			var answer = $(this).data('answer');
+			$.ajax({
+				method: "PUT",
+				headers: {
+					"X-Parse-Application-Id": PARSE_APP_ID,
+					"X-Parse-REST-API-Key": PARSE_REST_API_KEY 
+				},
+				url: 'https://api.parse.com/1/classes/Answer/' + 
+					answer.objectId,
+				data: JSON.stringify(
+					{"votes": answer.votes + 1}
+				),
+				contentType: "application/json",
+				success: votedSuccessfully,
+				error: ajaxError
+			});
+		}
+		
+		function votedSuccessfully() {
+			noty({
+				text: 'Thanks for voting', 
+				layout: 'topCenter',
+				timeout: 2000}
+			);
+			
 		}
 		
 		function ajaxError() {
