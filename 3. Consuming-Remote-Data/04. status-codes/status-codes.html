@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	 <title>Consuming remote data with JavaScript: Status codes</title>
+	 <style>
+		.info{
+			font-size: 0.9em;
+			font-style: italic;
+			border: 1px solid orange;
+			display: block;
+			padding:5px 15px;
+			width: 250px;
+			margin: 0 auto;
+			text-indent: 0;
+		}
+		.success, .error{
+			width: 600px;
+			margin: 0 auto;
+			padding: 15px;
+			border: 3px solid black;
+			border-radius: 5px;
+			font-size: 28px;
+			font-family: Arial;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		.success{
+			border-color: yellowgreen;
+			color: yellowgreen;
+		}
+		.error{
+			border-color: #FF7878;
+			color: #FF7878;
+		}
+	</style>
+</head>
+<body>
+	<div id="buttons-container">
+		<button id='btn-send-success-request' class='button'>Send Success Request</button>
+		<button id='btn-send-error-request' class='button'>Send Error Request</button>
+	</div>
+	<div id="success-box" class="success"></div>
+	<div id="error-box" class="error"></div>
+	<script src="status-codes.js"></script>
+	<p class='info'>This web page should be run on a server (localhost or in WWW).</p>
+</body>
+</html>

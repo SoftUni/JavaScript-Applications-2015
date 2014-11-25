@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Consuming remote data with JavaScript: Creating a HttpRequest object</title>
+	<style type="text/css">
+		.info{
+			font-size: 0.9em;
+			font-style: italic;
+			border: 1px solid orange;
+			display: block;
+			padding:5px 15px;
+			width: 250px;
+			margin: 0 auto;
+			text-indent: 0;
+		}
+	</style>
+	<script src="http-request.js"></script>
+</head>
+<body>
+	<div id="http-response"></div>
+	<script>
+		httpRequest.make({
+			url: "http://localhost:3000/students",
+			success: function (data) {
+				var list,
+					i,
+					len,
+					student;
+				list = document.createElement('ul');
+				jsonData = JSON.parse(data);
+				len = jsonData.count;
+				for (i = 0; i < len; i += 1) {
+					student = jsonData.students[i];
+					item = document.createElement('li');
+					item.innerHTML = student.name + ' is in ' + student.grade + ' grade';
+					list.appendChild(item);
+				}
+				document.getElementById('http-response').appendChild(list);
+			},
+			error: function (err) {
+				document.getElementById("http-response").innerHTML = "<div style='color:red;font-weight:bold'>Error</div>";
+			}
+		});
+		
+	</script>
+	<p class='info'>This web page should be run on a server (localhost or in WWW).</p>
+</body>
+</html>

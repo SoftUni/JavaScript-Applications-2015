@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  <title>Consuming remote data with JavaScript: Using the response in HTML</title>
+	<style>
+		h1{
+			font-size:2.1em;
+			text-decoration:underline;
+			margin:0;
+		}
+		p{
+			text-indent:2em;
+			text-align:justify;
+		}
+		.partial-div{
+			border: 1px solid black; 
+			margin: 0; 
+			padding: 5px 15px; 
+			border-radius: 15px;
+		}
+		.red{
+			background: red;
+		}
+
+		.info{
+			font-size: 0.9em;
+			font-style: italic;
+			border: 1px solid orange;
+			display: block;
+			padding:5px 15px;
+			width: 250px;
+			margin: 0 auto;
+			text-indent: 0;
+		}
+	</style>
+</head>
+<body>
+	<div>Before the partial view</div>
+	<div id="http-response"></div>
+	<script src="response-html.js"></script>	
+	<div>After the partial view</div>
+	<p class='info'>This web page should be run on a server (localhost or in WWW).</p>
+</body>
+</html>
