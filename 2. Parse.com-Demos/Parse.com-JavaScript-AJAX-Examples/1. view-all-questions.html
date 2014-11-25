@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Parse.com & jQuery AJAX: View All Questions</title>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+
+<body>  
+  <section class="widget">
+    <h2>Questions</h2>
+    <ul id="questions">
+    </ul>
+  </section>
+  
+  <script type="text/javascript">
+    $(function() {
+		var PARSE_APP_ID = "TWvkNXvWKe6GixlxZ44tv8pwacMJMwleMuG2oIT2";
+		var PARSE_REST_API_KEY = "vIaiOnNJTeV4ZnqSHrocG4jlCP00iJd24NywZkM9";
+		
+		$.ajax({
+			method: "GET",
+			headers: {
+				"X-Parse-Application-Id": PARSE_APP_ID,
+				"X-Parse-REST-API-Key": PARSE_REST_API_KEY 
+			},
+			url: "https://api.parse.com/1/classes/Question",
+		}).success(function(data) {
+			for (var q in data.results) {
+				var question = data.results[q];
+				var questionItem = $('<li>');
+				questionItem.text(question.questionText);
+				questionItem.appendTo($("#questions"));
+			}
+		}).error(function() {
+			alert('Cannot load questions.');
+		});
+	});
+  </script>
+</body>
+
+</html>
