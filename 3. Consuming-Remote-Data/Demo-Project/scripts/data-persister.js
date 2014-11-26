@@ -3,25 +3,29 @@ var application = application || {};
 application.data = (function () {
 	function Data(rootUrl) {
 		this.rootUrl = rootUrl;
-		this.students = new Students(rootUrl);
-		// this.schools = new Schools();
+		this.students = new Base(rootUrl + 'students/');
+		this.schools = new Base(rootUrl + 'schools/');
 	}
 
-	function Students(rootUrl) {
-		this.serviceUrl = rootUrl + 'students/';
-	}
+	var Base = (function () {
+		function Base(serviceUrl) {
+			this.serviceUrl = serviceUrl;
+		}
 
-	Students.prototype.getAll = function (success, error) {
-		return ajaxRequester.get(this.serviceUrl, success, error);
-	}
+		Base.prototype.getAll = function (success, error) {
+			return ajaxRequester.get(this.serviceUrl, success, error);
+		}
 
-	Students.prototype.add = function (student, success, error) {
-		return ajaxRequester.post(this.serviceUrl, student, success, error);
-	}
+		Base.prototype.add = function (data, success, error) {
+			return ajaxRequester.post(this.serviceUrl, data, success, error);
+		}
 
-	Students.prototype.remove = function (id, success, error) {
-		return ajaxRequester.delete(this.serviceUrl + id, success, error);
-	}
+		Base.prototype.remove = function (id, success, error) {
+			return ajaxRequester.delete(this.serviceUrl + id, success, error);
+		}
+
+		return Base;
+	}());
 
 	return {
 		get: function (rootUrl) {
