@@ -23,18 +23,18 @@ app.configure('development', function () {
 });
 
 
-//app.all('*', function (req, res, next) {
-//  res.header('Access-Control-Allow-Origin', '*');
-//  res.header('Access-Control-Allow-Headers', 'X-Requested-With,Content-type');
-//  next();
-//});
+app.all('*', function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With,Content-type');
+  next();
+});
 
 app.get('/students', students.getAll);
 app.post('/students', students.add);
 app.delete('/students/:id', students.remove);
 app.get('/schools', schools.getAll);
 app.post('/schools', schools.add);
-app.delete('schools/:id', schools.remove);
+app.delete('/schools/:id', schools.remove);
 
 http.createServer(app).listen(app.get('port'), function () {
   console.log("Express server listening on port " + app.get('port'));

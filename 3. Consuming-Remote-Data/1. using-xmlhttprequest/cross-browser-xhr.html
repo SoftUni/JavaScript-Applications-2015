@@ -1,7 +1,6 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Consuming remote data with JavaScript: Using XHR</title>
+<head> <title>Consuming remote data with JavaScript: Crossbrowser XHR</title>
     <style>
 			.info{
 				font-size: 0.9em;
@@ -15,13 +14,13 @@
 			}
 		</style>
 </head>
-<body>			  	
+<body>
+	<p class='info'>This web page should be run on a server (localhost or in WWW).</p>
 	<div id="http-response"></div>
 
-	<script src="using-xhr.js"></script>		
-	<p class='info'>This web page should be run on a server (localhost or in WWW).</p>
+	<script src="cross-browser-xhr.js"></script>
 	<script>
-		sendRequest('http://localhost:3000/students', 'GET', true);
+		sendRequest('GET', 'http://localhost:3000/students', true);
 	</script>
 </body>
 </html>

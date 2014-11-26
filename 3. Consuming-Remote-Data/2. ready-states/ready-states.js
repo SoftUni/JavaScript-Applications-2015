@@ -65,7 +65,4 @@
   httpRequest.open('GET', resourceUrl, true);
 
   httpRequest.send(null);
-
-}).call(this);
-
-//# sourceMappingURL=ready-states.map
+}());

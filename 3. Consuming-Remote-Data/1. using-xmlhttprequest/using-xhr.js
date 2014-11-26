@@ -1,6 +1,6 @@
 ﻿(function () {
 	'use strict';
-	function sendRequest(url, method, isAsync) {
+	function sendRequest(method, url, isAsync) {
 		var httpRequest = new XMLHttpRequest(),
 			isAsync = isAsync || false;
 		
