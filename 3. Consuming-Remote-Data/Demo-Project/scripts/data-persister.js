@@ -30,6 +30,6 @@ application.data = (function () {
 	return {
 		get: function (rootUrl) {
 			return new Data(rootUrl);
-		} 
+		}
 	}
 }());

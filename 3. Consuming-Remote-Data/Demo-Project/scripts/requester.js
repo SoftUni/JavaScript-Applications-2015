@@ -23,7 +23,7 @@ var ajaxRequester = (function () {
 	}
 
 	var makeDeleteRequest = function (url, success, error) {
-		return makeRequest('DELETE', url, success, error);
+		return makeRequest('DELETE', url, null, success, error);
 	}
 
 	return {
