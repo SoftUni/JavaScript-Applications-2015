@@ -36,7 +36,7 @@
 	
 	schools = [];
 	
-	getAllSchools = function(req, res) {
+	getAllSchools = function(req, res) {	
 		var school, schoolsModels;
 		schoolsModels = (function() {
 			var i, len, results;

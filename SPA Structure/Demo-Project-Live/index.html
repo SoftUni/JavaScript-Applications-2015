@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Demo Project</title>
+	<style type="text/css">
+		#all-students > div {
+			border: 1px solid #999;
+			border-radius: 5px;
+			padding: 10px;
+			margin: 10px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="students">
+			<div id="all-students"></div>
+			<div>
+				<input id="name" type="text" placeholder="Student's name"/>
+				<input id="grade" type="number" placeholder="Student's grade" />
+				<button id="add-student">Add student</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="scripts/ajax-requester.js"></script>
+	<script type="text/javascript" src="scripts/data-persister.js"></script>
+	<script type="text/javascript" src="scripts/controller.js"></script>
+	<script type="text/javascript" src="scripts/main.js"></script>
+</body>
+</html>
