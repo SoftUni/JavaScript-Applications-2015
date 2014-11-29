@@ -15,13 +15,14 @@
             var deferred = Q.defer();
 
             setTimeout(function () {
-                document.getElementById("bomb").innerHTML = "BOOOM";
-                var bombDropDateTime = new Date();
-                deferred.resolve(bombDropDateTime);
-
+				// var error = true;
                 if (error) {
                     deferred.reject("shot ne me kefish");
-                }
+                } else {
+					document.getElementById("bomb").innerHTML = "BOOOM";
+					var bombDropDateTime = new Date();
+					deferred.resolve(bombDropDateTime);
+				}
             }, 3000);
 
             
