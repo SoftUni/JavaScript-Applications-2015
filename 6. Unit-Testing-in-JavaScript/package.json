@@ -1,0 +1,19 @@
+{
+  "name": "UnitTestingInJavaScript",
+  "version": "1.0.0",
+  "description": "Unit Testing in JavaScript demonstrations with Mocha and Chai",
+  "main": "index.js",
+  "dependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "SoftUni Team",
+  "license": "MIT"
+}
