@@ -17,7 +17,9 @@
 		return p + " third";
 	}
 
+	var nestedAll = third(second(first("zero")));
 	var all = _.compose(third, second, first);
 
+	console.log(nestedAll);
 	console.log(all("zero"));
 }());

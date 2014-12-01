@@ -29,5 +29,4 @@
 	var fnames = _.pluck(people, 'fname');
 	console.log('---Firstnames: ');
 	console.log(fnames);
-
 }());

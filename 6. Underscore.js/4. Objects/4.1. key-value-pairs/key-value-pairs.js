@@ -25,5 +25,4 @@
 
 	console.log('---Inverted: ');
 	console.log(_.invert(person));
-
 }());
