@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Consuming remote data with JavaScript: Creating HTTP Requests with getJSON</title>
+	<style type="text/css">
+		.info{
+			font-size: 0.9em;
+			font-style: italic;
+			border: 1px solid orange;
+			display: block;
+			padding:5px 15px;
+			width: 250px;
+			margin: 0 auto;
+			text-indent: 0;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+	<div id="http-response"></div>
+	<script>
+  	var url = 'http://localhost:3000/students';
+		$.getJSON(url, function (data) {
+			var i, student, len, $studentsList;
+			$studentsList = $('<ul />');
+			for(i = 0, len = data.students.length; i < len; i +=1){
+				student = data.students[i];
+				$('<li />')
+					.html(student.name)
+					.appendTo($studentsList);
+			}
+			$("#http-response").html($studentsList);
+		});
+	</script>
+	<p class='info'>This web page should be run on a server (localhost or in WWW).</p>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Storage event</title>
+</head>
+<body>
+<script>
+	// Works only with different tabs
+	window.addEventListener('storage', storageEventHandler, false);
+
+	function storageEventHandler(evt){
+		alert('Storage event called!');
+	    console.dir("storage event called key: " + evt );
+	}
+
+	localStorage.setItem("someKey", "someValue");
+</script>
+</body>
+</html>

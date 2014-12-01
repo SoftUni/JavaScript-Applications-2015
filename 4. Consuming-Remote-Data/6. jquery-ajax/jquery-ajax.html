@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Consuming remote data with JavaScript: HTTP Requests with jQuery AJAX</title>
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<style type="text/css">
+		.info{
+			font-size: 0.9em;
+			font-style: italic;
+			border: 1px solid orange;
+			display: block;
+			padding:5px 15px;
+			width: 250px;
+			margin: 0 auto;
+			text-indent: 0;
+		}
+
+		.message.success{
+			color: green;
+		}
+		.message.error{
+			color: red;
+		}
+		.message.error, .message.success{
+			display: none;
+		}
+
+		.student-item strong:before{
+			content: 'Name: ';
+		}
+
+		.student-item span:before{
+			content: ', Grade: ';
+		}
+	</style>
+</head>
+<body>
+	<label for="tb-name">Name: </label>
+	<input id="tb-name" name="tb-name" type="text" />
+	<br/>
+	<label for="tb-grade">Grade: </label>
+	<input id="tb-grade" name="tb-grade" type="number" min='1' max='12'/>
+	<br/>
+	<button id='btn-add-student'>Add new</button>
+	<div class="messages">
+		<strong class="message success">
+		</strong>
+		<strong class="message error">
+		</strong>
+	</div>
+	<div id="students-container"></div>
+	<script src="scripts.js">	</script>
+	<p class='info'>This web page should be run on a server (localhost or in WWW).</p>
+</body>
+</html>
