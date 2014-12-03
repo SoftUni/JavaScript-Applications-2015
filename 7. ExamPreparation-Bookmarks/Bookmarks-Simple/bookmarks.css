@@ -1,0 +1,15 @@
+body>header, body>footer {
+    margin: 10px 0px;
+    background: orange;
+    text-align: center;
+    color: white;
+}
+
+body>header a {
+    display: none;
+    float: right;
+}
+
+#bookmarksView li a {
+    display: block;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Bookmarks</title>
+    <link rel="stylesheet" href="bookmarks.css" />
+    <script src="scripts/libs/jquery-2.1.1.js"></script>
+    <script src="scripts/libs/jquery.noty.packaged.min.js"></script>
+    <script src="scripts/ajaxRequester.js"></script>
+    <script src="scripts/userSession.js"></script>
+    <script src="scripts/app.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div>
+            Bookmarks
+            <span></span>
+            <a href="#" id="btnLogout">Logout</a>
+        </div>
+    </header>
+    <main>
+        <div id="homeView">
+            <a href="#" id="btnShowLoginView">Login</a>
+            <a href="#" id="btnShowRegisterView">Register</a>
+        </div>
+
+        <div id="loginView">
+            <div>Login</div>
+            Username: <input type="text" id="txtLoginUsername" /><br/>
+            Password: <input type="password" id="txtLoginPassword" /><br/>
+            <a href="#" id="btnLoginLogin">Login</a>
+            <a href="#" id="btnLoginRegister">Register</a>
+        </div>
+
+        <div id="registerView">
+            <div>Register</div>
+            Username: <input type="text" id="txtRegisterUsername" /><br/>
+            Password: <input type="password" id="txtRegisterPassword" /><br/>
+            <a href="#" id="btnRegister">Register</a>
+        </div>
+
+        <div id="bookmarksView">
+            <ul>
+            </ul>
+            <div>
+                <div>New Bookmark</div>
+                Title: <input type="text" id="txtTitle" /><br>
+                Url: <input type="url" id="txtUrl" /><br>
+                <a href="#" id="btnAddBookmark">Add</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>&copy; 2014 by SoftUni Foundation, No Rights Reserved</div>
+    </footer>
+</body>
+
+</html>
