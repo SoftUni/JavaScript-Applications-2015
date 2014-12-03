@@ -12,13 +12,13 @@ app.UI = (function () {
 		function LoginControl() {
 		}
 
-        getUsernameText: function () {
+        LoginControl.prototype.getUsernameText = function () {
             // return $("#login-username-input").val();
-        },
+        }
 
-        getPasswordText: function () {
+        LoginControl.prototype.getPasswordText = function () {
             // return $("#login-password-input").val();
-        },
+        }
 
 		return LoginControl;
 	}());
@@ -26,8 +26,6 @@ app.UI = (function () {
 
 	return {
 		loginControl: LoginControl,
-		registerControl: RegisterControl,
-		studentsControl: StudentsControl,
-		schoolsControl: SchoolsControl,
+		//registerControl: RegisterControl,
 	}
 }());

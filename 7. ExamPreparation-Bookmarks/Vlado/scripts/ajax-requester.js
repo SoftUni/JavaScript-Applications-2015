@@ -1,7 +1,14 @@
 var app = app || {};
 
 app.ajaxRequester = (function () {
-	var makeRequest = function makeRequest(method, url, data) {
+	function AjaxRequester() {
+		this.get = makeGetRequest;
+		this.post = makePostRequest;
+		this.put = makePutRequest;
+		this.delete = makeDeleteRequest;
+	}
+
+	var makeRequest = function makeRequest(method, url, data, headers) {
 		var defer = Q.defer();
 
         if(data){
@@ -11,6 +18,7 @@ app.ajaxRequester = (function () {
 		return $.ajax({
 			type: method,
 			url: url,
+			headers: headers,
 			contentType: 'application/json',
 			data: data,
 			success: function (data) {
@@ -24,27 +32,25 @@ app.ajaxRequester = (function () {
 		return defer.promise;
 	}
 
-	function makeGetRequest(url) {
-		return makeRequest('GET', url, null);
+	function makeGetRequest(url, data, headers) {
+		return makeRequest('GET', url, data, headers);
 	}
 
-	
-	function makePostRequest(url, data) {
-		return makeRequest('POST', url, data);
+	function makePostRequest(url, data, headers) {
+		return makeRequest('POST', url, data, headers);
 	}
 
-	function makePutRequest(url, data) {
-		return makeRequest('PUT', url, data, success, error);
+	function makePutRequest(url, data, headers) {
+		return makeRequest('PUT', url, data, headers);
 	}
 
-	function makeDeleteRequest(url) {
-		return makeRequest('DELETE', url, {}, success, error);
+	function makeDeleteRequest(url, headers) {
+		return makeRequest('DELETE', url, null, headers);
 	}
 
 	return {
-		get: makeGetRequest,
-		post: makePostRequest,
-		put: makePutRequest,
-		delete: makeDeleteRequest
+		get: function () {
+			return new AjaxRequester();
+		}
 	}
 }());

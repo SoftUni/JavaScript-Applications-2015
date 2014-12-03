@@ -1,25 +1,27 @@
 (function () {
-	var rootUrl = 'http://localhost:3000/';
-	var dataPersister = app.dataPersister.get(rootUrl);
+	var rootUrl = 'https://api.parse.com/1/';
+	var ajaxRequester = app.ajaxRequester.get();
+	var dataPersister = app.dataPersister.get(rootUrl, ajaxRequester);
 	var controller = app.controller.get(dataPersister);
 		
-	app.sammy = Sammy('#wrapper', function () {
+	app.routes = Sammy(function () {
+		var selector = '#wrapper';
 		this.get('#/', function () {
-			controller.loadHome('#wrapper');
+			controller.loadHome(selector);
 		});
 
-		this.get('#/students', function () {
-			controller.loadHome('#wrapper');
+		this.get('#/login', function () {
+			controller.loadLogin(selector);
 		});
 
-		this.get('#/schools', function () {
-			controller.loadHome('#wrapper');
+		this.get('#/register', function () {
+			controller.loadRegister(selector);
 		});
 
-		this.get('#/contacts', function () {
-			$('#wrapper').html('contacts')
+		this.get('#/bookmarks', function () {
+			controller.loadBookmarks(selector);
 		});
 	});
 
-	app.sammy.run('#/');
+	app.routes.run('#/');
 }())
