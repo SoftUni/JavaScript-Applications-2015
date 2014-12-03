@@ -35,6 +35,35 @@ app.controller = (function () {
 			});
 	}
 
+	Controller.prototype.attachEventHandlers = function () {
+		attachLoginHandler.call(this);
+		attachRegisterHandler.call(this);
+	}
+
+	function attachLoginHandler() {
+		var _this = this;
+		$('#wrapper').on('click', '#login-btn', function (e) {
+			var username = $('#username').val();
+				password = $('#password').val();
+			_this._dataPersister.users.login(username, password)
+				.then(function (data) {
+					console.log(data);
+				});
+		});
+	}
+
+	function attachRegisterHandler() {
+		var _this = this;
+		$('#wrapper').on('click', '#register-btn', function (e) {
+			var username = $('#username').val();
+				password = $('#password').val();
+			_this._dataPersister.users.register(username, password)
+				.then(function (data) {
+					console.log(data);
+				});
+		});
+	}
+
 	return {
 		get: function (dataPersister) {
 			return new Controller(dataPersister);

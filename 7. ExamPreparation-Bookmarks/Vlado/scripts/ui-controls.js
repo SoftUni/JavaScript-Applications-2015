@@ -1,31 +1,52 @@
 var app = app || {};
 
 app.UI = (function () {
-	function UI() {
-		this.loginControl = new LoginControl();
-		//this.registerControl = new RegisterControl();
-		//this.studentsControl = new StudentsControl();
-		//this.schoolsControl = new SchoolsControl();
-	}
-
-	var LoginControl = (function () {
-		function LoginControl() {
-		}
-
-        LoginControl.prototype.getUsernameText = function () {
+	var loginControl = (function () {
+        function getUsernameText () {
             // return $("#login-username-input").val();
         }
 
-        LoginControl.prototype.getPasswordText = function () {
+        function getPasswordText () {
             // return $("#login-password-input").val();
         }
 
-		return LoginControl;
+        function attachLoginButtonHandler(selector) {
+        	$(selector).on('click', function (e) {
+        		
+        	});
+        }
+
+		return {
+			getUsername: getUsernameText,
+			getPassword: getPasswordText,
+			attachButtonHandler: attachLoginButtonHandler
+		};
 	}());
 	
+	var registerControl = (function () {
+        function getUsernameText () {
+            // return $("#login-username-input").val();
+        }
+
+        function getPasswordText () {
+            // return $("#login-password-input").val();
+        }
+
+        function attachRegisterHandlers(selector) {
+        	$(selector).on('click', function (e) {
+        		
+        	});
+        }
+
+		return {
+			getUsername: getUsernameText,
+			getPassword: getPasswordText,
+			attachButtonHandler: attachRegisterButtonHandler
+		};
+	}());
 
 	return {
-		loginControl: LoginControl,
-		//registerControl: RegisterControl,
+		loginControl: loginControl,
+		registerControl: registerControl,
 	}
 }());
