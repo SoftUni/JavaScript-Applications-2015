@@ -1,0 +1,15 @@
+<div id="bookmarks">
+	<ul>
+		{{#results}}
+		<li data-id="{{objectId}}">
+			{{title}} - {{url}}
+			<button class="delete-bookmark-btn">X</button>
+		</li>
+		{{/results}}
+	</ul>
+	<div id="create-bookmark-form">
+		<input type="text" id="title" />
+		<input type="text" id="url" />
+		<button id="create-bookmark">Create bookmark</button>
+	</div>
+</div>
