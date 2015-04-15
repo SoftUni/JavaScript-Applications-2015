@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Geolocation with promises</title>
-    <script src="node_modules/q/q.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.js"></script>
 </head>
 <body>
     <div id="location-element">
@@ -29,6 +29,7 @@
         }
 
         function parseLatAndLongCoords(geolocationPosition) {
+		throw { message: "No coords element found", name: "UserException" };
             if (geolocationPosition.coords) {
                 return { lat: geolocationPosition.coords.latitude, long: geolocationPosition.coords.longitude };
             }
@@ -47,21 +48,10 @@
             locationElement.appendChild(imgElement);
         }
 
-        function fadeOutPromise(selector, time) {
-            var deferred = Q.defer();
-
-            var target = $(selector);
-            target.fadeOut(time, null, function () {
-                deferred.resolve(target);
-            });
-
-            return deferred.promise;
-        }
-
-        getGeolocationPositionPromise().
-            then(parseLatAndLongCoords).
-            then(createGeolocationImage).
-            done();
+        getGeolocationPositionPromise()
+			.then(parseLatAndLongCoords)
+			.then(createGeolocationImage)
+			.done();
 
         setInterval(function () {
             var currentDateTime = new Date();

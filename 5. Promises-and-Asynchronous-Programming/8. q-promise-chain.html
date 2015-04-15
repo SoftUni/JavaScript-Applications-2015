@@ -2,26 +2,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Q promise chain</title>
-    <script src="node_modules/q/q.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.js"></script>
 </head>
 <body>
     <script>
-        function sqrtPromise(number) {
+        function powerPromise(number) {
             var deferred = Q.defer();
+			
 
             deferred.resolve(Math.sqrt(number));
 
             return deferred.promise;
         }
 
-        sqrtPromise(26).then(function (result) {
-            throw { message: "oops", name: "someexception" };
-            return sqrtPromise(result);
-        }).then(function (result) {
-            console.log(result);
-        }, function (error) {
-            console.log("Gyrmim syvsem kulturno: " + error.message);
-        });
+        powerPromise(-5)
+			.then(function (result) {
+				//throw { message: "unknown error" };
+				return powerPromise(result, 2);
+			})
+			.then(function (result) {
+				console.log(result);
+			}, function (error) {
+				console.warning("Known exception: " + error.message);
+			});
 
     </script>
 </body>

@@ -64,6 +64,8 @@
         }
       };
       httpRequest.open(type, requestUrl, true);
+      httpRequest.setRequestHeader('X-Parse-Application-Id', 'Jbky6Cpo4PnzRbOnO82fMZ2evawgMDBOWHsimThO');
+      httpRequest.setRequestHeader('X-Parse-REST-API-Key', 'NJTYQ5aNKeG3MjHsLkoS8Yl4odmqtHta0aAoO7q8');
       httpRequest.setRequestHeader('Content-Type', contentType);
       httpRequest.setRequestHeader('Accept', accept);
       return httpRequest.send(data);

@@ -19,18 +19,25 @@
 <body>
 	<div id="http-response"></div>
 	<script>
-  	var url = 'http://localhost:3000/students';
-		$.getJSON(url, function (data) {
-			var i, student, len, $studentsList;
-			$studentsList = $('<ul />');
-			for(i = 0, len = data.students.length; i < len; i +=1){
-				student = data.students[i];
-				$('<li />')
-					.html(student.name)
-					.appendTo($studentsList);
-			}
-			$("#http-response").html($studentsList);
-		});
+  	var url = 'https://api.parse.com/1/classes/Question';
+    $.ajaxSetup({
+        headers: {
+            'X-Parse-Application-Id' : 'Jbky6Cpo4PnzRbOnO82fMZ2evawgMDBOWHsimThO',
+            'X-Parse-REST-API-Key' : 'NJTYQ5aNKeG3MjHsLkoS8Yl4odmqtHta0aAoO7q8'
+        }
+    });
+
+    $.getJSON(url, function (data) {
+        var i, question, len, $questionList;
+        $questionList = $('<ul />');
+        for(i = 0, len = data.results.length; i < len; i +=1){
+            question = data.results[i];
+            $('<li />')
+                .html(question.questionTitle)
+                .appendTo($questionList);
+        }
+        $("#http-response").html($questionList);
+    });
 	</script>
 	<p class='info'>This web page should be run on a server (localhost or in WWW).</p>
 </body>

@@ -6,22 +6,25 @@
 </head>
 <body>
     <script>
-        function sqrtPromise(a) {
+        function powerPromise(number, power) {
             var d = $.Deferred();
 
-            d.resolve(Math.sqrt(a));
+			
+			throw
+            d.resolve(Math.pow(number, power));
 
             return d.promise();
         }
 
-        sqrtPromise(9).then(function (result) {
-            console.log(result);
-            throw { message: "error", name: "exception" };
-        }).then().then(function () {
-            console.log("last in chain");
-        }, function (error) {
-            console.log(error);
-        });
+        powerPromise(4, 2)
+			.then(function (result) {
+				console.log(result);
+			})
+			.then(function () {
+				console.log("last in chain");
+			}, function (error) {
+				console.log('Grumna be maina, ' + error.message);
+			});
         
     </script>
 </body>

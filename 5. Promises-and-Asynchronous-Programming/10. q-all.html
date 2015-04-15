@@ -2,30 +2,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Q all function</title>
-    <script src="node_modules/q/q.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.js"></script>
 </head>
 <body>
     <script>
 
-        function sumPromise(a, b) {
+        function productPromise(a, b) {
             var d = Q.defer();
 
-            d.resolve(a + b);
+            d.resolve(a * b);
 
             return d.promise;
         }
 
-        function sqrtPromise(a) {
-            var d = Q.defer();
+        function powerPromise(number, power) {
+            var deferred = Q.defer();
 
-            d.resolve(Math.sqrt(a));
+            deferred.resolve(Math.pow(number, power));
 
-            return d.promise;
+            return deferred.promise;
         }
 
-        Q.all([sumPromise(2, 3), sqrtPromise(9)]).spread(function (first, second) {
-            console.log(first, second);
-        });
+        Q.all([productPromise(2, 3), powerPromise(3, 2)])
+			.spread(function (first, second) {
+				console.log(first, second);
+			});
 
     </script>
 </body>

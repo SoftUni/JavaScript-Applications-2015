@@ -25,7 +25,7 @@
 			$countriesList.append(
 				$('<li />')
 				.addClass('country-item')
-				.html(country.name)
+				.html(country.capital)
 			);
 		});
 		return $countriesList;
@@ -51,11 +51,13 @@
 			}
 		});
 
-		$.get('http://restcountries.eu/rest/v1')
-			.success(function (respCountries) {
-				var $countriesList = createCountriesList(respCountries);
-				$('#countries').html($countriesList);
-			});
+		$.ajax({
+			method : 'get',
+			url: 'http://restcountries.eu/rest/v1'
+		}).success(function (respCountries) {
+			var $countriesList = createCountriesList(respCountries);
+			$('#countries').html($countriesList);
+		});
 	});
 	</script>	
 </body>

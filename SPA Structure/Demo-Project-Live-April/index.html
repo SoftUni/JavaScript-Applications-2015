@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <style>
+        #wrapper {
+            border: 1px solid black;
+        }
+        .student-list {
+            border: 1px solid hotpink;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div id="students-container"></div>
+    <div>
+        <input type="text" id="student-name"/>
+        <input type="text" id="student-grade"/>
+        <button id="add-student">Add Student</button>
+    </div>
+</div>
+<script src="scripts/model.js"></script>
+<script src="scripts/students-view-model.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

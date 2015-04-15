@@ -10,9 +10,10 @@
 		showSuccess, 
 		successBox;
 
-  resourceUrl = 'http://localhost:3000/students';
+    resourceUrl = 'https://api.parse.com/1/classes/Question';
 
-  getHttpRequest = (function() {
+
+    getHttpRequest = (function() {
     var xmlHttpFactories;
     xmlHttpFactories = [
       function() {
@@ -106,8 +107,11 @@
         }
       }
     };
-    httpRequest.open('GET', url, true);
-    return httpRequest;
+      httpRequest.open('GET', url, true);
+      httpRequest.setRequestHeader('X-Parse-Application-Id', 'Jbky6Cpo4PnzRbOnO82fMZ2evawgMDBOWHsimThO');
+      httpRequest.setRequestHeader('X-Parse-REST-API-Key', 'NJTYQ5aNKeG3MjHsLkoS8Yl4odmqtHta0aAoO7q8');
+
+      return httpRequest;
   };
 
   document.getElementById('btn-send-success-request').addEventListener('click', function() {
@@ -118,7 +122,7 @@
 
   document.getElementById('btn-send-error-request').addEventListener('click', function() {
     var httpRequest;
-    httpRequest = buildRequest(resourceUrl + 'INVALID_URL');
+    httpRequest = buildRequest('rgkewfenk' + 'INVALID_URL');
     return httpRequest.send(null);
   });
 }).call(this);

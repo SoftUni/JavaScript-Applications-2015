@@ -2,26 +2,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Q error propagation and done</title>
-    <script src="node_modules/q/q.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.js"></script>
 </head>
 <body>
     <script>
-        function sqrtPromise(number) {
+		function powerPromise(number, power) {
             var deferred = Q.defer();
-
+			deferred.notify();
+			//throw new Error('Error');
             if (number >= 0) {
-                deferred.resolve(Math.sqrt(number));
+                deferred.resolve(Math.pow(number, power));
+            } else {
+                deferred.reject("The number must be positive");
             }
-            else {
-                deferred.reject("number must be positive");
-            }
+			
+			throw new Error('Another one');
             return deferred.promise;
         }
 
         //NOTE: Some the demos are commented, in order to prevent crowding of the console. Uncomment the demo you want to see.
 
         //---Error propagating up to the first error handler
-        //sqrtPromise(-26).then(function (result) {
+        //powerPromise(-26, 2).then(function (result) {
         //    return Math.round(result);
         //}).then(function (result) {
         //    console.log(result);
@@ -30,21 +32,29 @@
         //});
 
         //---No error handler, but finished with done, logging the error as an exception
-        //sqrtPromise(-26).then(function (result) {
+        //powerPromise(-26, 3).then(function (result) {
         //    return Math.round(result);
         //}).then(function (result) {
         //    console.log(result);
         //}).done();
 
         //---Exception in one of the thens, calling the error handler in the next then
-        sqrtPromise(26).then(function (result) {
-            throw { message: "error on purpose", name: "error" };
-            return Math.round(result);
-        }).then(function (result) {
-            console.log(result);
-        }, function (error) { //comment out this function and the .done() below will re-throw the exception
-            console.log(error.message);
-        }).done();
+        powerPromise(2, 3)
+			.then(function (result) {
+				//throw { message: "error on purpose", name: "error" };
+				return Math.round(result);
+			})
+			.then(success, error, pending)
+			.then(function (result) {
+				console.log(result);
+			})
+			.then(function (result) {
+				console.log(result);
+			})
+			.then(undefined,function (error) {
+				console.log(error);
+			})
+			.done();
 
 
     </script>

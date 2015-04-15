@@ -20,7 +20,7 @@
 	<div id="http-response"></div>
 	<script>
 		httpRequest.make({
-			url: "http://localhost:3000/students",
+			url: "https://api.parse.com/1/classes/Question",
 			success: function (data) {
 				var list,
 					i,
@@ -28,11 +28,11 @@
 					student;
 				list = document.createElement('ul');
 				jsonData = JSON.parse(data);
-				len = jsonData.count;
+				len = jsonData.results.length;
 				for (i = 0; i < len; i += 1) {
-					student = jsonData.students[i];
+					question = jsonData.results[i];
 					item = document.createElement('li');
-					item.innerHTML = student.name + ' is in ' + student.grade + ' grade';
+					item.innerHTML = question.questionTitle;
 					list.appendChild(item);
 				}
 				document.getElementById('http-response').appendChild(list);

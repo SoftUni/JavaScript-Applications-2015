@@ -4,32 +4,28 @@
     <title>Callback value</title>
 </head>
 <body>
-    <button id="drop-bomb">Drop Bomb</button>
-    <div id="bomb" style="font-size: 20em; color: red"></div>
-    <div id="bomb-report" style="font-size: 10em;" ></div>
+    <button id="get-report">Get Report</button>
+    <div id="weather" style="font-size: 10em; color: lightblue;"></div>
+    <div id="weather-report" style="font-size: 5em; color: green;"></div>
 
     <script>
-        function dropBomb(success) {
+        function getReport(success) {
             setTimeout(function () {
-                document.getElementById("bomb").innerHTML = "BOOOM";
+                document.getElementById("weather").innerHTML = "Cloudy";
 
-                var bombDropDateTime = new Date();
+                var getReportDateTime = new Date();
 
-                success(bombDropDateTime);
+                success(getReportDateTime);
             }, 3000);
         }
 
-        function reportBombDrop(time) {
-            document.getElementById("bomb-report").innerHTML = "Bomb dropped at " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+        function reportWeather(time) {
+            document.getElementById("weather-report").innerHTML = "Weather report at " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
         }
 
-        document.getElementById("drop-bomb").onclick = function () {
-            dropBomb(function (time) {
-                document.getElementById("bomb-report").
-                    innerHTML = "Bomb dropped at " +
-                    time.getHours() + ":" +
-                    time.getMinutes() + ":" +
-                    time.getSeconds();
+        document.getElementById("get-report").onclick = function () {
+            getReport(function (time) {
+                reportWeather(time);
             });
         }
     </script>

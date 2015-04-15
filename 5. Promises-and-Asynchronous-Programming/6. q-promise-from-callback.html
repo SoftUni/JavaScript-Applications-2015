@@ -3,25 +3,25 @@
 <head>
     <title>Q promise from callback</title>
 
-    <script src="node_modules/q/q.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.js"></script>
 </head>
 <body>
-    <button id="drop-bomb">Drop Bomb</button>
-    <div id="bomb" style="font-size: 20em; color: red"></div>
-    <div id="bomb-report" style="font-size: 10em;" ></div>
+    <button id="get-report">Get Report</button>
+    <div id="weather" style="font-size: 10em; color: lightblue;"></div>
+    <div id="weather-report" style="font-size: 5em; color: green;"></div>
 
     <script>
-        function dropBomb() {
+        function getReport() {
             var deferred = Q.defer();
 
             setTimeout(function () {
-				// var error = true;
+				var error = true;
                 if (error) {
-                    deferred.reject("shot ne me kefish");
+                    deferred.reject("Lunch break!");
                 } else {
-					document.getElementById("bomb").innerHTML = "BOOOM";
-					var bombDropDateTime = new Date();
-					deferred.resolve(bombDropDateTime);
+					document.getElementById("weather").innerHTML = "Cloudy";
+					var getReportDateTime = new Date();
+					deferred.resolve(getReportDateTime);
 				}
             }, 3000);
 
@@ -29,12 +29,15 @@
             return deferred.promise;
         }
 
-        function reportBombDrop(time) {
-            document.getElementById("bomb-report").innerHTML = "Bomb dropped at " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+        function reportWeather(time) {
+            document.getElementById("weather-report").innerHTML = "Weather report at " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
         }
 
-        document.getElementById("drop-bomb").onclick = function () {
-            dropBomb().then(reportBombDrop);
+        document.getElementById("get-report").onclick = function () {
+            getReport()
+				.then(reportWeather, function (error) {
+					console.error(error);
+				});
         }
 
 
