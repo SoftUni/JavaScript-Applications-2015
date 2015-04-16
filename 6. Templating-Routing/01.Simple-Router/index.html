@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    <li><a href="#/">Home</a></li>
+    <li><a href="#/login">Login</a></li>
+    <li><a href="#/register">Register</a></li>
+    <li><a href="#/students">Students</a></li>
+</ul>
+<div id="wrapper"></div>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="//cdn.jsdelivr.net/sammy/0.7.4/sammy.js"></script>
+<script>
+    var app = app || {};
+
+    (function() {
+        app.router = Sammy(function () {
+            var selector = '#wrapper';
+
+            this.get('#/', function() {
+                $(selector).html('Home');
+            });
+
+            this.get('#/login', function() {
+                $(selector).html('Login');
+            });
+
+            this.get('#/register', function() {
+                $(selector).html('Register');
+            });
+
+            this.get('#/students', function() {
+                $(selector).html('Students');
+            });
+        });
+
+        app.router.run('#/');
+    }());
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #wrapper {
+            width: 150px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="#/">Home</a></li>
+    <li><a href="#/login">Login</a></li>
+    <li><a href="#/student/123">Pesho</a></li>
+    <li><a href="#/register">Register</a></li>
+    <li><a href="#/students">Students</a></li>
+</ul>
+<div id="wrapper"></div>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="//cdn.jsdelivr.net/sammy/0.7.4/sammy.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+
+
+<script src="scripts/views/studentsView.js"></script>
+<script src="scripts/views/registerView.js"></script>
+<script src="scripts/views/loginView.js"></script>
+<script src="scripts/views/homeView.js"></script>
+
+<script src="scripts/models/modelRequester.js"></script>
+<script src="scripts/models/studentModel.js"></script>
+<script src="scripts/models/model.js"></script>
+
+<script src="scripts/controller.js"></script>
+<script src="scripts/app.js"></script>
+</body>
+</html>

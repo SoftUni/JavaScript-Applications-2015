@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="wrapper"></div>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+<script>
+    $.get('template.html', function (template) {
+        var json = {
+            "header": "Welcome to Mustache",
+            "items": [
+                { "name": 'Pesho', "first": true, "link" :true,  "url": '#Pesho'},
+                { "name": 'Gosho', "link": true, "url": '#Gosho'},
+                { "name": 'Minka', "link": true, "url": '#Minka'}
+            ],
+            "empty": false
+        };
+
+        var outp = Mustache.render(template, json);
+        $('#wrapper').html(outp);
+    })
+</script>
+</body>
+</html>
