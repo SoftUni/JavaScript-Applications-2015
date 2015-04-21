@@ -1,0 +1,24 @@
+<table>
+    <thead>
+        <tr>
+            <td>Name:</td>
+            <td>Grade:</td>
+        </tr>
+    </thead>
+    <tbody id="students">
+    {{#students}}
+    <tr>
+        <td>{{name}}</td>
+        <td>{{grade}}</td>
+    </tr>
+    {{/students}}
+    </tbody>
+</table>
+
+<div id="addStudentWrapper">
+    <label for="name">Name:</label>
+    <input type="text" id="name"/>
+    <label for="grade">Grade:</label>
+    <input type="text" id="grade"/>
+    <button type="submit" id="addStudent">Add</button>
+</div>

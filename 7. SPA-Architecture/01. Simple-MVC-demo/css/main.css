@@ -1,0 +1,19 @@
+table {
+    width : 400px;
+}
+
+table, tr, td {
+    border: 1px dotted black;
+}
+
+table > thead {
+    background-color: aqua;
+}
+
+table > tbody {
+    background-color: aquamarine;
+}
+
+#addStudentWrapper > label {
+    display: block;
+}
