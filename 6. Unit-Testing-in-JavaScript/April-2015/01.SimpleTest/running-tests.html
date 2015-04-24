@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit testing in Javascript with Mocha: Running tests</title>	
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+<script>
+    function sum(numbers) {
+        var numbersSum, i, number, len;
+        numbersSum = 0;
+        for (i = 0, len = numbers.length; i < len; i++) {
+            number = numbers[i];
+            numbersSum += number;
+        }
+        return numbersSum;
+    }
+
+    function testSum() {
+        if(sum([1,2]) != 3) {
+            throw new Error('1+2 != 3');
+        }
+        if(sum([-2]) != -2) {
+            throw new Error('-2 != -2');
+        }
+        if(sum([]) != 0) {
+            throw new Error('0 != 0');
+        }
+    }
+
+    testSum();
+</script>
+</body>
+</html>
