@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Phonebook</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<header id="header">Phonebook<span></span></header>
+
+<ul id="menu">
+    <li><a href="#/home/" class="link">Home</a></li>
+    <li><a href="#/phones/" class="link">Phonebook</a></li>
+    <li><a href="#/phones/add/" class="link">Add Phone</a></li>
+    <li><a href="#/profile/edit/" class="link">Edit Profile</a></li>
+    <li><a href="#/logout/" class="link">Logout</a></li>
+</ul>
+
+<main id="wrapper"></main>
+
+<footer id="footer">&copy; 2014 by Software University Foundation, No Rights Reserved</footer>
+
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/q/q.js"></script>
+<script src="node_modules/mustache/mustache.min.js"></script>
+<script src="node_modules/shimney-sammy/main.js"></script>
+<script src="node_modules/noty/js/noty/jquery.noty.js"></script>
+
+
+<script src="js/models/headers.js"></script>
+<script src="js/models/ajaxRequest.js"></script>
+
+<script src="js/models/userModel.js"></script>
+<script src="js/models/phoneModel.js"></script>
+
+<script src="js/views/homeViews.js"></script>
+<script src="js/views/phoneViews.js"></script>
+<script src="js/views/userViews.js"></script>
+
+<script src="js/controllers/homeController.js"></script>
+<script src="js/controllers/userController.js"></script>
+<script src="js/controllers/phoneController.js"></script>
+
+<script src="js/app.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, serif;
+}
+
+#header {
+    display: block;
+    padding: 5px;
+    background: #A9D18E;
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+#menu {
+    float: left;
+    list-style-type: none;
+    background: #A9D18E;
+    padding: 5px 10px;
+    margin: 10px;
+}
+
+#menu li {
+    margin: 8px 0;
+}
+
+#wrapper {
+    margin-left: 111px;
+    /*text-align: center;*/
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button {
+    background: #70AD47;
+    border: 2px solid #507E32;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.link {
+    color: #2E75B6;
+    text-decoration: none;
+    padding: 2px 0;
+    border-bottom: 1px dotted #2E75B6;
+}
+
+.dialog-box {
+    display: inline-block;
+    margin: 10px 0;
+    background: #A9D18E;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #507E32;
+    box-shadow: 1px 1px 3px #507E32;
+}
+
+.dialog-box h1 {
+    margin: 0 0 10px 0;
+    text-align: center;
+    font-size: 18pt;
+}
+
+.dialog-box h1:after
+{
+    content: ' ';
+    display: block;
+    border: 1px solid #507E32;
+    margin: 10px 0 20px 0;
+    box-shadow: 1px 1px 3px #507E32;
+}
+
+.dialog-box p {
+    margin: 5px 0;
+}
+
+.dialog-box p.buttons {
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+
+.dialog-box label {
+    display: inline-block;
+    min-width: 90px;
+}
+
+.dialog-box input {
+    font-size: 12pt;
+    font-weight: bold;
+    padding: 5px;
+    border: 1px solid #70AD47;
+    border-radius: 2px;
+}
+
+.dialog-box input:focus {
+    outline: 0;
+    border: 1px solid #3a6c35;
+}
+
+#phones {
+    margin: 10px;
+}
+
+table tr {
+    background: #A9D18E;
+}
+
+table th, table td {
+    border: 1px solid #507E32;
+    padding: 5px;
+    text-align: left;
+    box-shadow: 1px 1px 3px #507E32;
+    word-break: break-all;
+    max-width: 300px;
+}
+
+#footer {
+    display: block;
+    padding: 5px;
+    background: #A9D18E;
+    font-size: 10pt;
+    text-align: center;
+    clear: both;
+}
+
